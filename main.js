@@ -1,4 +1,3 @@
-import './style.css'
 fetch("data.json")
   .then((response) =>
   {
