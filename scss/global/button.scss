@@ -1,0 +1,15 @@
+.button {
+    background-color: var(--color-neutral-800);
+    color: var(--color-neutral-0);
+    line-height: 1;
+    padding: 1rem 2rem;
+    border-radius: 100vw;
+    border: none;
+    cursor: pointer;
+    transition: all .5 ease-in-out;
+
+    &:hover,
+    &:focus-visible {
+        background: var(--gradient);
+    }
+}

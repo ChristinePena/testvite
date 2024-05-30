@@ -1,0 +1,30 @@
+:root {
+        /* PRIMARY */
+        --accent-red: hsl(0, 100%, 67%);
+        --accent-yellow: hsl(39, 100%, 56%);
+        --accent-green: hsl(166, 100%, 37%);
+        --accent-blue: hsl(234, 85%, 45%);
+
+        /* GRADIENTS - BACKGROUND */
+        --color-gradient-background-400: hsl(252, 100%, 67%);
+        --color-gradient-background-600: hsl(241, 81%, 54%);
+        --color-gradient-circle-700: hsla(256, 72%, 46%, 1);
+        --color-gradient-circle-900: hsla(241, 72%, 46%, 0);
+
+        // NEUTRAL
+        --color-neutral-0: hsl(0, 0%, 100%);
+        --color-neutral-50: hsl(221, 100%, 96%);
+        --color-neutral-100: hsl(241, 100%, 89%);
+
+        --color-neutral-800: hsl(224, 30%, 27%);
+
+        // LINEAR - GRADIENT
+        --gradient: linear-gradient(var(--color-gradient-background-400), var(--color-gradient-background-600));
+        --gradiente: linear-gradient(var(--color-gradient-circle-700), var(--color-gradient-circle-900));
+
+        //HSLA COLORS CODE
+        --accent-red-code: 0, 100%, 67%;
+        --accent-yellow-code: 39, 100%, 56%;
+        --accent-green-code: 166, 100%, 37%;
+        --accent-blue-code: 234, 85%, 45%;
+}

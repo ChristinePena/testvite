@@ -1,0 +1,28 @@
+@use '../util/' as u;
+
+:root {
+    // FONT WEIGHT
+    --fw-regular: 500;
+    --fw-bold: 700;
+    --fw-black: 800;
+    --font-family-default: 'HankenGrotesk';
+
+    // FONT SIZE
+    --fs-xl: #{u.rem(72)};
+    --fs-l: #{u.rem(32)};
+    --fs-m: #{u.rem(24)};
+    --fs-body: #{u.rem(18)};
+}
+
+p,
+h4 {
+    font-size: clamp(u.rem(16), 0.9353448275862069rem + 0.27586206896551724vw, u.rem(18));
+}
+
+h2 {
+    font-size: clamp(u.rem(18), 0.9310344827586208rem + 0.8275862068965516vw, u.rem(24));
+}
+
+h3 {
+    font-size: clamp(u.rem(24), 1.2413793103448276rem + 1.103448275862069vw, u.rem(32));
+}

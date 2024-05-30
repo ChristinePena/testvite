@@ -1,0 +1,54 @@
+@use '../util' as u;
+
+.summary {
+    background-color: var(--color-neutral-0);
+    padding: 1.5rem 1.8rem 2rem;
+
+    @include u.breakpoint(medium) {
+        padding: var(--padding);
+    }
+
+    &__title {
+        color: var(--color-neutral-800);
+        font-weight: var(--fw-bold);
+        //   font-size: var(--fs-body);
+    }
+
+    &__light-text {
+        opacity: 0.5;
+    }
+
+    &__item {
+        // FLEX
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        border-radius: u.rem(15);
+        font-weight: var(--fw-bold);
+        background-color: hsla(var(--summary-component-color-code), 0.1);
+        color: var(--summary-component-color);
+    }
+
+    /* Custom color card */
+    &__item[data-color="red"] {
+        --summary-component-color-code: var(--accent-red-code);
+        --summary-component-color: var(--accent-red);
+    }
+
+    &__item[data-color="yellow"] {
+        --summary-component-color-code: var(--accent-yellow-code);
+        --summary-component-color: var(--accent-yellow);
+    }
+
+    &__item[data-color="green"] {
+        --summary-component-color-code: var(--accent-green-code);
+        --summary-component-color: var(--accent-green);
+    }
+
+    &__item[data-color="blue"] {
+        --summary-component-color-code: var(--accent-blue-code);
+        --summary-component-color: var(--accent-blue);
+    }
+
+}

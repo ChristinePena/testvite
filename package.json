@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.0",
+    "sass": "^1.77.3",
     "vite": "^5.2.0"
   }
 }
