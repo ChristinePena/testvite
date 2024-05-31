@@ -1,4 +1,4 @@
-fetch("data.json")
+fetch("/js/data.json")
     .then((response) =>
     {
         if (!response.ok)
