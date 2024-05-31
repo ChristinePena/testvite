@@ -1,4 +1,4 @@
-fetch("/js/data.json")
+fetch("https://raw.githubusercontent.com/ChristinePena/testvite/main/app/js/data.json")
     .then((response) =>
     {
         if (!response.ok)
