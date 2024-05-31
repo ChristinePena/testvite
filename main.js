@@ -1,35 +1,20 @@
-fetch("data.json")
-  .then((response) =>
+fetch('https://raw.githubusercontent.com/ChristinePena/testvite/main/app/js/data.json')
+  .then(function (response)
   {
-    if (!response.ok)
+    if (response.ok)
     {
-      throw new Error(`HTTP error, status = ${response.status}`);
+      console.log("OK");
+      response.blob().then(function (miBlob)
+      {
+        var objectURL = URL.createObjectURL(miBlob);
+        miImagen.src = objectURL;
+      });
+    } else
+    {
+      console.log("Respuesta de red OK pero respuesta HTTP no OK");
     }
-    return response.json();
   })
-  .then((data) =>
+  .catch(function (error)
   {
-    const frame = document.getElementById("loop");
-    data.map((element) =>
-    {
-      console.log(element);
-      let newDiv = document.createElement("div");
-      newDiv.id = element.id;
-      newDiv.className = "space";
-      newDiv.innerHTML = `
-            <div class="summary__item" data-color=${element.color}>
-            <div class="flex-group">
-            <img src=${element.icon} alt=""/>
-            <h4>${element.category}</h4>
-            </div>
-            <p class="summary__score">${element.score}
-            <span class="summary__light-text"> / 100</span>
-            </p></div>`
-        ;
-      frame.appendChild(newDiv);
-    });
-
-
-  }).catch((error) => console.error("Error loading JSON file", error));
-
-
+    console.log("Hubo un problema con la petición Fetch:" + error.message);
+  });
