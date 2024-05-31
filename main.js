@@ -1,4 +1,4 @@
-fetch('https://jsonplaceholder.typicode.com/todos/1')
+fetch('data.json')
   .then(response =>
   {
     console.log(response.status) //<-- Tiene status
@@ -11,4 +11,8 @@ fetch('https://jsonplaceholder.typicode.com/todos/1')
 
   )
   .then(data => console.log("aqui los datos")) // <-- Aqui si esta data
+
+
+
+
   .catch(error => console.log("Hay un error que no está entre 200 y 50x"));
