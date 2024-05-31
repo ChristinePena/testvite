@@ -6,12 +6,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <title>Frontend Mentorrs | Results summary component</title>
-  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
   <!-- CSS Stylesheet -->
   <link rel="stylesheet" href="./scss/style.scss">
-  <!-- <link rel="stylesheet" href="/dist/style.css" />-->
-  <!-- <script defer src="/dist/assets/script.js"></script> -->
-  <script src="main.js"></script>
+  <link rel="stylesheet" href="/dist/style.css" />
+  <script type="text/javascript">
+    alert('Hey');
+
+    fetch('https://raw.githubusercontent.com/ChristinePena/database/main/data.json')
+      .then((response) =>
+      {
+        if (!response.ok)
+        {
+          throw new Error(`HTTP error, status = ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) =>
+      {
+        const frame = document.getElementById("loop");
+        data.map((element) =>
+        {
+          console.log(element);
+          let newDiv = document.createElement("div");
+          newDiv.id = element.id;
+          newDiv.className = "space";
+          newDiv.innerHTML = `
+            <div class="summary__item" data-color=${element.color}>
+            <div class="flex-group">
+            <img src=${element.icon} alt=""/>
+            <h4>${element.category}</h4>
+            </div>
+            <p class="summary__score">${element.score}
+            <span class="summary__light-text"> / 100</span>
+            </p></div>`
+            ;
+          frame.appendChild(newDiv);
+        });
+
+
+      }).catch((error) => console.error("Error loading JSON file", error));
+
+
+  </script>
 
 </head>
 
@@ -21,7 +58,7 @@
       <h1 class="visually-hidden">Result Summary</h1>
 
       <section class="result grid-flow" data-spacing="large">
-        <h2 class="result__title">Your Result</h2>
+        <h2 class="result__title">Your Besult</h2>
         <div class="result__circle">
           <span class="result__large-number">76</span>
           <span class="result__small-number">of 100</span>
@@ -84,14 +121,6 @@
 
     </article>
   </main>
-
-  <!-- Javascript -->
-  <script type="module" src="main.js"></script>
-
-  // <!-- <div class="attribution">
-  //   Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-  //   Coded by <a href="#">Christine Peña</a>.
-  // </div> -->
 </body>
 
 </html>

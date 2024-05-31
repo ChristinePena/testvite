@@ -1,4 +1,7 @@
-fetch('https://raw.githubusercontent.com/ChristinePena/testvite/main/app/js/data.json')
+const config = require('https://raw.githubusercontent.com/ChristinePena/database/main/data.json');
+console.log(config);
+
+fetch('https://raw.githubusercontent.com/ChristinePena/database/main/data.json')
     .then((response) =>
     {
         if (!response.ok)
